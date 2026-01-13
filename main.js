@@ -1,33 +1,30 @@
+
 document.addEventListener('DOMContentLoaded', function(){
     let getRows1 = document.getElementsByClassName("row1");
     let getBlocks1 = document.getElementsByClassName("block1");
     let getRows2 = document.getElementsByClassName("row2");
     let getBlocks2 = document.getElementsByClassName("block2");
-
-    let row1 = getData(getRows1);
-    let blocks1 = getData(getBlocks1);
-    let row2 = getData(getRows2);
-    let blocks2 = getData(getBlocks2);
+    let dinoSpawned = false;
 
 
+    spawnDino(getBlocks2, dinoSpawned);
+    moveDino(getBlocks2, getBlocks1);
 
 })
 
-
-
-function getData(x){
-    let output = [];
-    for (let i = 0; i < x.length; x++){
-        output.push(x[i]);
-    }
-    return output;
-}
-
-
-function moveDino(x, y){
+function moveDino(ground, up){
+    let dino = "Test";
     document.addEventListener("keypress", function(event){
         if (event.key === ' ' || event.key === "Spacebar"){
-            
+            let dinoPos = getDinoLocation(ground);
+            up[dinoPos + 1].innerHTML = dino;
+            ground[dinoPos].innerHTML = "";
+            setTimeout(() => {
+                let upDinoPos = getDinoLocation(up);
+                ground[upDinoPos + 1].innerHTML = dino;
+                up[upDinoPos].innerHTML = "";
+            }, 300);
+
         }
     })
 }
@@ -38,6 +35,19 @@ function createObstacle(row, dino){
     }
 }
 
-function spawnDino(){
-    
+function spawnDino(block, bool){
+    let dino = "Test";
+    if (!bool){
+        block[0].innerHTML = dino;
+    }
+    bool = true;
+}
+
+function getDinoLocation(block){
+    let dino = "Test";
+    for (let i = 0; i < block.length; i++){
+        if (block[i].innerHTML == dino){
+            return i;
+        }
+    }
 }
