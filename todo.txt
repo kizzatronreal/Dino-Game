@@ -1,0 +1,19 @@
+* = Not that big of a deal
+** = Should probably fix
+*** = Major issue
+// = Things to add
+! = Prioritize
+
+!* Either create a global variable called dino or figure out a way to stop repeating dino var in multiple functions
+
+* Table not proper size or rendering properly
+
+* Rows need to be removed or utilized in some way
+
+
+
+
+
+!// Add a function to detect if the dino has hit an obstacle
+!// Add a function to create the obstacles
+!//Create core gameplay movement with dino 
