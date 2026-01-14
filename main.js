@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
     spawnDino(getBlocks2, dinoSpawned);
     createObstacle(getBlocks2);
-    moveDino(getBlocks2, getBlocks1);
+    dinoControl(getBlocks2, getBlocks1);
 
 })
 
-function moveDino(ground, up){
+function dinoControl(ground, up){
     let dino = "Test";
     document.addEventListener("keypress", function(event){
         if (event.key === ' ' || event.key === "Spacebar"){
@@ -54,4 +54,8 @@ function getDinoLocation(block){
             return i;
         }
     }
+}
+
+function moveGame(){
+
 }
