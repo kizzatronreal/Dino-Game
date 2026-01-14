@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     spawnDino(getBlocks2, dinoSpawned);
+    createObstacle(getBlocks2);
     moveDino(getBlocks2, getBlocks1);
 
 })
@@ -29,9 +30,12 @@ function moveDino(ground, up){
     })
 }
 
-function createObstacle(row, dino){
-    for (let i = 0; i < row.length; i++){
-        
+function createObstacle(block){
+    let max = block.length;
+    for (let i = 0; i < block.length / 2; i++){
+        let min = getDinoLocation(block) + 1;
+        let randNum = Math.floor(Math.random() * (max - min + 1) + min);
+        block[randNum].innerHTML = "BLOCK";
     }
 }
 
