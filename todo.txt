@@ -16,4 +16,4 @@
 
 !// Add a function to detect if the dino has hit an obstacle
 !// Add a function to create the obstacles
-!//Create core gameplay movement with dino 
+!!//Create core gameplay movement with dino 
